@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 
@@ -27,6 +28,8 @@ func main() {
 		AllowedHeaders:   []string{"*/*"},
 		AllowCredentials: true,
 	}).Handler(r)
+
+	fmt.Println("Hello World!")
 
 	// thread this reflex server away from the main routine to not block the chi graphql handler server
 	go func() {
