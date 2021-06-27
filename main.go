@@ -32,7 +32,7 @@ func main() {
 	}()
 
 	r.Get("/", func(rw http.ResponseWriter, r *http.Request) {
-		_, e := rw.Write([]byte("Hello From GO API"))
+		_, e := rw.Write([]byte("Hello From GO API!!!"))
 		if e != nil {
 			log.Println(e)
 		}
