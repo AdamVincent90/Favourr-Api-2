@@ -9,7 +9,7 @@ RUN go mod tidy
 RUN go build main.go
 
 EXPOSE 4000
-EXPOSE 80
+EXPOSE 8080
 
 CMD [ "reflex", "-c", "reflex.conf" ]
 

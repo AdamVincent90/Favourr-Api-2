@@ -28,6 +28,13 @@ func main() {
 		AllowCredentials: true,
 	}).Handler(r)
 
+	// thread this reflex server away from the main routine to not block the chi graphql handler server
+	go func() {
+		if err := http.ListenAndServe(":80", nil); err != nil {
+			log.Println(err)
+		}
+	}()
+
 	r.Get("/", func(rw http.ResponseWriter, r *http.Request) {
 
 		res := Response{
