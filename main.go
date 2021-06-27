@@ -10,8 +10,6 @@ import (
 	"github.com/rs/cors"
 )
 
-const port string = ":80"
-
 type Response struct {
 	Title string
 }
