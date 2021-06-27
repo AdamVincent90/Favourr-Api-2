@@ -5,5 +5,6 @@ WORKDIR /app
 RUN go get github.com/cespare/reflex
 
 EXPOSE 4002
+EXPOSE 4000
 
-CMD [ "reflex", "-c", "config/reflex.conf" ]
+CMD [ "reflex", "-c", "reflex.conf" ]
