@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 
@@ -10,6 +11,10 @@ import (
 )
 
 const port string = ":80"
+
+type Response struct {
+	Title string
+}
 
 func main() {
 
@@ -32,7 +37,17 @@ func main() {
 	}()
 
 	r.Get("/", func(rw http.ResponseWriter, r *http.Request) {
-		_, e := rw.Write([]byte("Hello From GO API!!!"))
+
+		res := Response{
+			Title: "Hello World!",
+		}
+
+		re, err := json.Marshal(res)
+		if err != nil {
+			log.Println(err)
+		}
+
+		_, e := rw.Write(re)
 		if e != nil {
 			log.Println(e)
 		}
