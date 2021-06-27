@@ -12,7 +12,7 @@ func main() {
 
 	a := http.NewServeMux()
 
-	fmt.Println("Hello World!")
+	fmt.Println("Hello!")
 
 	a.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 		_, err := rw.Write([]byte("Hello Geezer!"))
