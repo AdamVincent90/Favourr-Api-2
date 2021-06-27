@@ -30,12 +30,6 @@ func main() {
 		AllowCredentials: true,
 	}).Handler(r)
 
-	go func() {
-		if err := http.ListenAndServe(port, nil); err != nil {
-			log.Fatalln("Error")
-		}
-	}()
-
 	r.Get("/", func(rw http.ResponseWriter, r *http.Request) {
 
 		res := Response{
