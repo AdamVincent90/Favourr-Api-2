@@ -29,7 +29,7 @@ func main() {
 		AllowCredentials: true,
 	}).Handler(r)
 
-	fmt.Println("Hello People!")
+	fmt.Println("Hello World!!")
 
 	// thread this reflex server away from the main routine to not block the chi graphql handler server
 	go func() {
